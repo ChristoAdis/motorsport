@@ -5,9 +5,10 @@ import os
 import copy
 
 import pandas as pd
+import json
 ######
 ### using tree
-tree_base_command = "tree -a -f -L 10000 -N -Q -s -D --dirsfirst -X"
+tree_base_command = "tree -a -f -L 10000 -N -Q -s -D --dirsfirst -J"
 # example
 # tree -a -f -L 10000 -N -Q -s -D --dirsfirst -J /home/giggi/motorsport/ > /home/giggi/motorsport/motorsport_index.json
 ### spawning new termional windows
@@ -54,10 +55,16 @@ def create_index_all_drives_sh(tree_commands):
         f.write(index_all_drives)
     
     return
+#################################################
+#################################################
+## injest the index outputs
+#indexes = glob.glob(index_output_home+"/*")
+
 
 #################################################
 #################################################
-tree_commands = setup_tree_commands()
-create_index_all_drives_sh(tree_commands)
+#################################################
+#tree_commands = setup_tree_commands()
+#create_index_all_drives_sh(tree_commands)
 
 print("tru")
